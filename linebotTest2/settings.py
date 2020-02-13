@@ -20,9 +20,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xy&f)m+_m0m9h(%e0mi-s$$ft#gh7#l2var1ytd(zke6m%+32!'
-LINE_CHANNEL_ACCESS_TOKEN = 'FcNzs6RgKMFU7UNRircHewB1BwKYbWXU/c2dSf5syorcshkOhZVnj2/NIbtiJh1gFxHbJguD9lE4xew3rMepHcG7U/sC0dEn0khsJEXLyJoW+9ozFhDytrwZwIeCDf+6cJX+Kkw/Eo2PfG0A4EWRUAdB04t89/1O/w1cDnyilFU='
-LINE_CHANNEL_SECRET = '071cb3bfc672d265bf77183b8e2467e7'
+# SECRET_KEY='xy&f)m+_m0m9h(%e0mi-s$$ft#gh7#l2var1ytd(zke6m%+32!'
+SECRET_KEY = os.getenv(
+    "SECRET_KEY", "xy&f)m+_m0m9h(%e0mi-s$$ft#gh7#l2var1ytd(zke6m%+32!"
+)
+# LINE_CHANNEL_ACCESS_TOKEN='FcNzs6RgKMFU7UNRircHewB1BwKYbWXU/c2dSf5syorcshkOhZVnj2/NIbtiJh1gFxHbJguD9lE4xew3rMepHcG7U/sC0dEn0khsJEXLyJoW+9ozFhDytrwZwIeCDf+6cJX+Kkw/Eo2PfG0A4EWRUAdB04t89/1O/w1cDnyilFU='
+# LINE_CHANNEL_SECRET='071cb3bfc672d265bf77183b8e2467e7'
+LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
+LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
